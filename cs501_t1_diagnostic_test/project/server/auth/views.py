@@ -7,6 +7,7 @@ from project.server import bcrypt, db
 from project.server.models import User
 
 auth_blueprint = Blueprint('auth', __name__)
+users = Blueprint('users', __name__)
 
 class RegisterAPI(MethodView):
     """
@@ -66,3 +67,11 @@ auth_blueprint.add_url_rule(
     view_func=registration_view,
     methods=['POST', 'GET']
 )
+
+users.add_url_rule(
+    '/users/index',     
+    view_func=registration_view,
+    methods=['POST', 'GET']
+)
+def hello_World():
+    return "hello!"
